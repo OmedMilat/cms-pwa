@@ -5,6 +5,12 @@ workbox.routing.registerRoute(
     workbox.strategies.networkFirst()
 );
 workbox.routing.registerRoute(
+    /\.(?:js)$/,
+    workbox.strategies.networkFirst({
+      cacheName: 'js files',
+    }),
+  ); 
+workbox.routing.registerRoute(
     new RegExp('https://dev-cmshowest.pantheonsite.io/wp-content/uploads/.*'),
     workbox.strategies.networkFirst()
 );

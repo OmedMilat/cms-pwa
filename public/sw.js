@@ -5,6 +5,12 @@ workbox.routing.registerRoute(
     workbox.strategies.networkFirst()
 );
 workbox.routing.registerRoute(
+    /\.(?:js)$/,
+    workbox.strategies.networkFirst({
+      cacheName: 'js files',
+    }),
+  ); 
+workbox.routing.registerRoute(
     new RegExp('https://dev-cmshowest.pantheonsite.io/wp-content/uploads/.*'),
     workbox.strategies.networkFirst()
 );
@@ -98,7 +104,6 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "src-sw.js",
-    "revision": "6ef7a6c57903c3bf1439477ffe737f6b"
-  },
-  "/app.js"
+    "revision": "8335201835f1a0125fd3747de8fdebae"
+  }
 ]);
