@@ -5,7 +5,7 @@ workbox.routing.registerRoute(
     workbox.strategies.networkFirst()
 );
 workbox.routing.registerRoute(
-    /\.(?:js)$/,
+    /\.(?:js|css)$/,
     workbox.strategies.networkFirst({
       cacheName: 'js files',
     }),

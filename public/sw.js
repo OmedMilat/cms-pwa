@@ -5,7 +5,7 @@ workbox.routing.registerRoute(
     workbox.strategies.networkFirst()
 );
 workbox.routing.registerRoute(
-    /\.(?:js)$/,
+    /\.(?:js|css)$/,
     workbox.strategies.networkFirst({
       cacheName: 'js files',
     }),
@@ -104,6 +104,6 @@ workbox.precaching.precacheAndRoute([
   },
   {
     "url": "src-sw.js",
-    "revision": "8335201835f1a0125fd3747de8fdebae"
+    "revision": "f1105903c4f5942bbcc351e0b3b8a7ee"
   }
 ]);
